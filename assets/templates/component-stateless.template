@@ -1,9 +1,9 @@
 import React from {quotes}react{quotes};
 import PropTypes from {quotes}prop-types{quotes};
-//import { Test } from './{componentName}.styles';
+import './{componentName}.scss';
 
 const {componentName} = (props) => (
-  <div className="{componentName}Wrapper">
+  <div className="{componentName}-comp">
     Test content
   </div>
 );

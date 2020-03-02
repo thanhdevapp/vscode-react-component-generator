@@ -3,22 +3,22 @@
   "displayName": "VSCode React Component Generator",
   "description": "Generates React component files automatically",
   "version": "0.0.3",
-  "publisher": "abdullahceylan",
+  "publisher": "thanhdevapp",
   "author": {
     "name": "Abdullah Ceylan",
     "email": "ben@abdullahceylan.com"
   },
-  "homepage": "https://github.com/abdullahceylan/vscode-react-component-generator",
+  "homepage": "https://github.com/thanhdevapp/vscode-react-component-generator",
   "galleryBanner": {
-      "color": "#0273D4",
-      "theme": "dark"
+    "color": "#0273D4",
+    "theme": "dark"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/abdullahceylan/vscode-react-component-generator.git"
+    "url": "https://github.com/thanhdevapp/vscode-react-component-generator.git"
   },
   "bugs": {
-    "url": "https://github.com/abdullahceylan/vscode-react-component-generator/issues",
+    "url": "https://github.com/thanhdevapp/vscode-react-component-generator/issues",
     "email": "ben@abdullahceylan.com"
   },
   "license": "MIT",
@@ -82,7 +82,7 @@
         },
         "ACReactComponentGenerator.mainFile.extension": {
           "type": "string",
-          "default": "jsx",
+          "default": "tsx",
           "description": "The extension of generated component file"
         },
         "ACReactComponentGenerator.styleFile.create": {
@@ -100,10 +100,9 @@
             "sass (.scss)",
             "less (.less)"
           ],
-          "default": "styled-components (.js)",
+          "default": "sass (.scss)",
           "description": "The type of stylesheet file to create"
         },
-
         "ACReactComponentGenerator.styleFile.suffix": {
           "type": "string",
           "default": ".styles",
@@ -116,7 +115,7 @@
         },
         "ACReactComponentGenerator.indexFile.extension": {
           "type": "string",
-          "default": "js",
+          "default": "ts",
           "description": "The extension of generated component index file"
         }
       }
@@ -172,7 +171,6 @@
     "eslint": "^4.11.0",
     "@types/node": "^8.10.25",
     "@types/mocha": "^2.2.42"
-
   },
   "dependencies": {
     "change-case": "^3.0.2",
