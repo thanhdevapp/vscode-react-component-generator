@@ -2,7 +2,16 @@ import { workspace, Uri, window } from 'vscode';
 import * as fse from 'fs-extra';
 import * as fs from 'fs';
 import * as path from 'path';
-import { pascalCase } from 'change-case';
+import { camelCase,
+  constantCase,
+  dotCase,
+  headerCase,
+  noCase,
+  paramCase,
+  pascalCase,
+  pathCase,
+  sentenceCase,
+  snakeCase } from 'change-case';
 import { Observable } from 'rxjs';
 import {
   IndexInterface,
@@ -32,7 +41,7 @@ export class FileHelper {
 
         let componentDir = `${contextMenuSourcePath}`;
         if(globalConfig.generateFolder) {
-            componentDir = `${contextMenuSourcePath}/${this.setName(componentName)}`;
+            componentDir = `${contextMenuSourcePath}/${paramCase(this.setName(componentName))}`;
             fse.mkdirsSync(componentDir);
         }
 
@@ -59,7 +68,7 @@ export class FileHelper {
 
         componentContent = removeBetweenTags(globalConfig.lifecycleType, removeLifecycleType, componentContent);
 
-        let filename = `${componentDir}/${compName}.${componentConfig.extension}`;
+        let filename = `${componentDir}/${paramCase(compName)}.${componentConfig.extension}`;
 
         if (componentConfig.create) {
             return this.createFile(filename, componentContent)
@@ -108,7 +117,7 @@ export class FileHelper {
         .replace(/{componentName}/g, compName)
         .replace(/{quotes}/g, this.getQuotes(globalConfig));
 
-      let filename = `${componentDir}/${compName}${styleConfig.suffix}.${styleTemplate.ext}`;
+      let filename = `${componentDir}/${paramCase(compName)}${styleConfig.suffix}.${styleTemplate.ext}`;
       if (styleConfig.create) {
         return this.createFile(filename, cssContent)
           .map(result => filename);

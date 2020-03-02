@@ -2,7 +2,7 @@
   "name": "vscode-react-component-generator",
   "displayName": "VSCode React Component Generator",
   "description": "Generates React component files automatically",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "publisher": "thanhdevapp",
   "author": {
     "name": "Abdullah Ceylan",
@@ -105,7 +105,7 @@
         },
         "ACReactComponentGenerator.styleFile.suffix": {
           "type": "string",
-          "default": ".styles",
+          "default": "",
           "description": "The suffix to add to the end of the stylesheet filename. Default: ComponentName.styles.(extension)"
         },
         "ACReactComponentGenerator.indexFile.create": {
@@ -127,7 +127,7 @@
       },
       {
         "command": "extension.genReactStatelessComponentFiles",
-        "title": "New React Stateless Component"
+        "title": "New React Function Component"
       },
       {
         "command": "extension.genReactReduxContainerComponentFiles",
