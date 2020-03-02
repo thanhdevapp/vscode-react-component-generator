@@ -1,12 +1,22 @@
-import React from {quotes}react{quotes};
+import React, { useEffect } from {quotes}react{quotes};
 import PropTypes from {quotes}prop-types{quotes};
 import './{componentName}.scss';
+// import fetch from 'isomorphic-unfetch'
 
-const {componentName} = (props) => (
-  <div className="{componentName}-comp">
-    Test content
-  </div>
-);
+const {componentName} = (props) => {
+  // const router = useRouter()
+  // const { t } = useTranslation(['common'], { i18n })
+
+  useEffect(() => {
+    // your logic
+
+    return () => {
+      
+    };
+  });
+ 
+  return <div className='{componentName}-comp'>Test content</div>
+};
 
 {componentName}.propTypes = {
   // bla: PropTypes.string,
@@ -15,5 +25,11 @@ const {componentName} = (props) => (
 {componentName}.defaultProps = {
   // bla: 'test',
 };
+
+//{componentName}.getInitialProps = async ({ req }) => {
+//  const res = await fetch('https://api.github.com/repos/zeit/next.js')
+//  const json = await res.json()
+//  return { stars: json.stargazers_count }
+//}
 
 export default {componentName};
